@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Apicativo de Filmes</string>
+    <string name="originais_netflix">Originais Netflix</string>
+    <string name="recomendados">Recomendados</string>
+    <string name="em_alta">Em Alta</string>
+    <string name="acao">Ação</string>
+    <string name="comedia">Comédia</string>
+    <string name="terror">Terror</string>
+    <string name="romance">Romance</string>
+    <string name="documentarios">Documentários</string>
+    <string name="assistir">Assistir</string>
+    <string name="saiba_mais">Saiba Mais</string>
+    <string name="episodios">Episodios</string>
+    <string name="opces_semelhantes">Filmes Semelhantes</string>
+    <string name="creditos_de_imagens">Creditos de Imagens Netflix</string>
+    <string name="creditos_de_dados">Creditos de dados The Movie Databse (TMDB)</string>
+    <string name="download">Download</string>
+    <string name="adicionar_a_lista">Minha Lista</string>
+    <string name="assistir_trailer">Trailer</string>
+
+    <string-array name="temporadas">
+        <item>Temporada 1</item>
+    </string-array>
+</resources>

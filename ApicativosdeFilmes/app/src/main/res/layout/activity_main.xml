@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <ImageView
+           android:id="@+id/iv_poster_home"
+           android:layout_width="0dp"
+           android:layout_height="300dp"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+       <TextView
+           android:id="@+id/tv_nome_filme_poster_home"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="20sp"
+           android:textStyle="bold"
+           android:layout_marginStart="30dp"
+           android:layout_marginTop="20dp"
+           android:layout_marginBottom="50dp"
+           android:background="@color/black_medium"
+           app:layout_constraintBottom_toBottomOf="@id/iv_poster_home"
+           app:layout_constraintStart_toStartOf="@id/iv_poster_home"
+           app:layout_constraintEnd_toEndOf="@id/iv_poster_home"/>
+
+       <ImageButton
+           android:id="@+id/iv_adicionar_minha_lista"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:src="@drawable/ic_mais"
+           android:background="@color/black"
+           app:tint="@color/white"
+           android:layout_marginStart="50dp"
+           app:layout_constraintTop_toBottomOf="@id/iv_poster_home"
+           app:layout_constraintStart_toStartOf="parent"/>
+
+       <TextView
+           android:id="@+id/tv_minha_lista"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="14sp"
+           android:layout_marginTop="10dp"
+           android:textStyle="bold"
+           android:text="@string/saiba_mais"
+           android:gravity="center_horizontal"
+           app:layout_constraintBottom_toBottomOf="@+id/iv_adicionar_minha_lista"
+           app:layout_constraintStart_toStartOf="@id/iv_adicionar_minha_lista"
+           app:layout_constraintEnd_toEndOf="@id/iv_adicionar_minha_lista"/>
+
+       <ImageView
+           android:id="@+id/iv_assistir_filme"
+           android:layout_width="120dp"
+           android:layout_height="40dp"
+           android:padding="10dp"
+           android:layout_marginTop="10dp"
+           android:background="@drawable/button_borda_arredondada"
+           app:layout_constraintStart_toEndOf="@id/iv_adicionar_minha_lista"
+           app:layout_constraintTop_toTopOf="@id/iv_adicionar_minha_lista"
+           app:layout_constraintBottom_toBottomOf="@id/iv_adicionar_minha_lista"
+           app:layout_constraintEnd_toStartOf="@id/iv_saiba_mais"/>
+
+       <ImageView
+           android:id="@+id/iv_play"
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:src="@drawable/ic_play"
+           app:layout_constraintStart_toStartOf="@id/iv_assistir_filme"
+           app:layout_constraintTop_toTopOf="@id/iv_assistir_filme"
+           app:layout_constraintBottom_toBottomOf="@id/iv_assistir_filme"
+           app:tint="@color/black" />
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:text="@string/assistir"
+           android:textSize="16sp"
+           android:textStyle="bold"
+           android:gravity="center_vertical"
+           android:textColor="@color/black"
+           app:layout_constraintTop_toTopOf="@id/iv_play"
+           app:layout_constraintStart_toEndOf="@id/iv_play"
+           app:layout_constraintBottom_toBottomOf="@id/iv_play"
+           app:layout_constraintEnd_toEndOf="@id/iv_assistir_filme"/>
+
+       <ImageView
+           android:id="@+id/iv_saiba_mais"
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:src="@drawable/ic_saiba_mais"
+           android:layout_marginEnd="50dp"
+           app:layout_constraintTop_toTopOf="@id/iv_assistir_filme"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="14sp"
+           android:textStyle="bold"
+           android:text="@string/saiba_mais"
+           android:layout_marginTop="10dp"
+           android:gravity="center_horizontal"
+           app:layout_constraintTop_toBottomOf="@id/iv_saiba_mais"
+           app:layout_constraintStart_toStartOf="@id/iv_saiba_mais"
+           app:layout_constraintBottom_toBottomOf="@id/iv_assistir_filme"
+           app:layout_constraintEnd_toEndOf="@id/iv_saiba_mais"/>
+
+       <TextView
+           android:id="@+id/tv_originais_netflix"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/originais_netflix"
+           android:textSize="20sp"
+           android:textStyle="bold"
+           android:layout_marginStart="20dp"
+           android:layout_marginTop="20dp"
+           app:layout_constraintTop_toBottomOf="@id/tv_minha_lista"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rv_originais_netflix"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/tv_originais_netflix" />
+
+       <TextView
+           android:id="@+id/tv_recomendados"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/recomendados"
+           android:layout_marginTop="20sp"
+           android:textStyle="bold"
+           android:textSize="20sp"
+           android:layout_marginStart="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/rv_originais_netflix" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rv_recomendados"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/tv_recomendados" />
+
+       <TextView
+           android:id="@+id/tv_em_alta"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/em_alta"
+           android:layout_marginTop="20sp"
+           android:textSize="20sp"
+           android:textStyle="bold"
+           android:layout_marginStart="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/rv_recomendados" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rv_em_alta"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/tv_em_alta" />
+
+       <TextView
+           android:id="@+id/tv_acao"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/acao"
+           android:layout_marginTop="20sp"
+           android:textSize="20sp"
+           android:textStyle="bold"
+           android:layout_marginStart="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/rv_em_alta" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rv_acao"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintTop_toBottomOf="@id/tv_acao"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+       <TextView
+           android:id="@+id/tv_comedia"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/comedia"
+           android:layout_marginTop="20sp"
+           android:textSize="20sp"
+           android:textStyle="bold"
+           android:layout_marginStart="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/rv_acao" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rv_comedia"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintTop_toBottomOf="@id/tv_comedia"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+       <TextView
+           android:id="@+id/tv_terror"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/terror"
+           android:layout_marginTop="20sp"
+           android:textStyle="bold"
+           android:textSize="20sp"
+           android:layout_marginStart="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/rv_comedia" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rv_terror"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintTop_toBottomOf="@id/tv_terror"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+       <TextView
+           android:id="@+id/tv_romance"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/romance"
+           android:layout_marginTop="20sp"
+           android:textStyle="bold"
+           android:textSize="20sp"
+           android:layout_marginStart="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/rv_terror" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rv_romance"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintTop_toBottomOf="@id/tv_romance"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+       <TextView
+           android:id="@+id/tv_documentarios"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/documentarios"
+           android:textStyle="bold"
+           android:layout_marginTop="20sp"
+           android:textSize="20sp"
+           android:layout_marginStart="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/rv_romance" />
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rv_documentarios"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintTop_toBottomOf="@id/tv_documentarios"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+       <TextView
+           android:id="@+id/footer_creditos_imagens"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:textStyle="bold"
+           android:textSize="16sp"
+           android:gravity="center"
+           android:layout_marginTop="20dp"
+           android:text="@string/creditos_de_imagens"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/rv_documentarios"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+       <TextView
+           android:id="@+id/footer_creditos_dados"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:textStyle="bold"
+           android:textSize="16sp"
+           android:gravity="center"
+           android:text="@string/creditos_de_dados"
+           android:layout_marginBottom="20dp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/footer_creditos_imagens"
+           app:layout_constraintEnd_toEndOf="parent"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
